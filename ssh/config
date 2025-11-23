@@ -1,0 +1,36 @@
+Host proxmox pve
+    HostName 192.168.1.250
+    User root
+    IdentityFile ~/.ssh/id_ed25519
+
+Host core core-services vm100
+    HostName 192.168.1.251
+    User brian
+    IdentityFile ~/.ssh/id_ed25519
+
+Host staging csp-staging vm104
+    HostName 192.168.1.241
+    User brian
+    IdentityFile ~/.ssh/id_ed25519
+
+Host ba ba-stack jira confluence vm110
+    HostName 192.168.1.252
+    User brian
+    IdentityFile ~/.ssh/id_ed25519
+
+Host ba2 ba-stack-2
+    HostName 192.168.1.253
+    User brian
+    IdentityFile ~/.ssh/id_ed25519
+
+Host app app-stack vm245
+    HostName 192.168.1.254
+    User brian
+    IdentityFile ~/.ssh/id_ed25519
+
+# Global settings for all hosts
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    StrictHostKeyChecking accept-new
+    AddKeysToAgent yes
